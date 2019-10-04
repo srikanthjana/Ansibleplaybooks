@@ -1,0 +1,14 @@
+---
+- hosts: servers
+  become: yes
+  vars:
+   - js: nginx
+  tasks:
+    - name: ensure nginx is at the latest version
+      apt: name="{{js}}" state=latest
+      notify: start nginx
+  handlers:
+    - name: start nginx
+      service: name="{{js}}" state=started
+ 
+

@@ -1,0 +1,9 @@
+---
+- hosts: servers
+  become: yes
+  tasks:
+   - name: waitfor
+     wait_for:
+        path: /tmp/file1
+   - name: print task
+     command: echo completed

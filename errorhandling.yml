@@ -1,0 +1,11 @@
+---
+- hosts: servers
+  become: yes
+  tasks:
+   - name: dummy task
+     command: nosuchcommand
+     ignore_error: yes
+   - name: second task
+     command: echo hiii
+     register: output
+   - debug: var=output

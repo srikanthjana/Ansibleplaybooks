@@ -1,0 +1,10 @@
+--- 
+- hosts: servers
+  become: yes
+  tasks:
+   - name: wait for file dummy to be available
+     wait_for:
+      path: /tmp/dummy
+   - name: print task
+     command: echo completed
+

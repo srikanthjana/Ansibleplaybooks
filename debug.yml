@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  tasks:
+    - name: ensure nginx is at the latest version
+      apt: name=nginx state=latest
+    - name: print task
+      raw: echo Hi Srikanth
+      register: output
+    - debug: var=output.stdout_lines 
+

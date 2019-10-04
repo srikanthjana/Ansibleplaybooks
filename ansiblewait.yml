@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  become: yes
+  tasks:
+   - name: wait for dummy2
+     wait_for:
+         port:
+        state: started
+   - name: print task
+     command: echo completed

@@ -1,0 +1,11 @@
+--- #list of tasty fruits
+fruits:
+  - Apple
+  - Orange
+  - Strawberry
+  - Mango
+--- # An employee record
+ Employee:
+   name: SRIKANTH
+    job: DevOps Engineer
+  skill: Aws,Devops

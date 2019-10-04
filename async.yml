@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  become: yes
+  tasks:
+   - name: install apache2
+     apt: name=apache2 state=present
+     async: 10
+     poll: 2
+   - name: start apache2
+     service: name=apache2 state=started

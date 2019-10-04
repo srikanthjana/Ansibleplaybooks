@@ -1,0 +1,11 @@
+---
+- hosts: servers
+  tasks:
+    - name: ensure nginx is at the latest version
+      apt: name=nginx state=latest
+      notify: start nginx
+  handlers:
+    - name: start nginx
+      service: name=nginx state=started
+ 
+
